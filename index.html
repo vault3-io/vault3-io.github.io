@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>VAULT3 JS SDK DEMO</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <h1>VAULT3 JS SDK DEMO</h1>
+    <div
+      style="
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div id="vault3" style="width: 70%; height: 100%; margin-top: 35%"></div>
+    </div>
+    <script type="module">
+      import { vault3 } from "https://cdn.jsdelivr.net/npm/@vault3/sdk-vanilla/dist/sdk-vanilla.js";
+
+      setTimeout(() => {
+        vault3.setup({
+          env: "PROD",
+          branding: {
+            primaryColor: "black",
+            secondaryColor: "white",
+            textColor: "black",
+          },
+        });
+        vault3.renderSpaceUnlock(
+          document.getElementById("vault3"),
+          "w3ar_discount_granada"
+        );
+      }, 1000);
+    </script>
+  </body>
+</html>
